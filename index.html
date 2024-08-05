@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hola tqm</title>
+    <link rel="icon" href="https://clipart.info/images/ccovers/1484772652Heart-png-black-transparent.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url(https://media.vogue.mx/photos/65385a61b55744cc3be240be/master/w_1600%2Cc_limit/young-miko-rapera.jpg) no-repeat center center fixed; 
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            max-width: 600px;
+            text-align: center;
+            color: white;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .photo {
+            width: 150px; /* Tamaño fijo para las imágenes */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        #photos {
+            display: flex;
+            justify-content: space-between; /* Espacio entre imágenes */
+            margin-top: 20px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            margin: 0 10px; /* Espacio entre imágenes */
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Posiciona el tooltip sobre la imagen */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #closing,
+        #signature {
+            text-align: right;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 id="title" class="fade-in">Hola pícale aquí jaja</h1>
+            <p id="message">
+                <!-- El mensaje se generará aquí -->
+            </p>
+            <div id="photos" class="fade-in" style="display: none;">
+                <div class="tooltip">
+                    <img src="https://i.postimg.cc/jSjcY1xq/foto1.jpg" alt="Foto 1" class="photo">
+                    <span class="tooltiptext">Memories I hold to keep safe</span>
+                </div>
+                <div class="tooltip">
+                    <img src="https://i.postimg.cc/52k34myB/foto2.jpg" alt="Foto 2" class="photo">
+                    <span class="tooltiptext">And I love to love you for God's sake</span>
+                </div>
+                <div class="tooltip">
+                    <img src="https://i.postimg.cc/jjwhLJnG/foto3.jpg" alt="Foto 3" class="photo">
+                    <span class="tooltiptext">I got the best friend in this place ♥️</span>
+                </div>
+            </div>                                              
+            <p id="closing" class="fade-in" style="display: none;">Feliz cumpleaños hdp, teamomucho</p>
+            <p id="signature" class="fade-in" style="display: none;">Con cariño: Pues yo, tu mejor amiga 😘</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paragraphs = [
+                "No sé que opines de esto, probablemente sean de las peores cosas que te han hecho pero oye, para esto estoy estudiando y me sirve para practicar.",
+                "El hecho de que sea virtual no quiere decir que no haya hecho algo, no creas que esto lo escribió chat gpt o una mierda así, todo sale de mi cora ok? Solo le pedí ayuda con el diseño porque esto lo vimos muy superficialmente.",
+                "No sé cómo empezar esto, quiero decirte muchas cosas aparte de feliz cumpleaños pero no quiero que te hartes de leer así que intentaré ser breve.",
+                "Realmente no puedo creer que sigamos hablando después de mucho tiempo. Nunca creí que nuestra amistad durara tanto. Sé que parece que la descuido pero sabes que desaparecer es mi pasión y tarde o temprano terminaré volviendo porque tú si vales la pena, no como otras.",
+                "Aunque no se note, sí te extraño. Me gusta que me cuentes sobre todas las tonterías que hiciste mientras yo no estaba, y aunque no me contaras nada, me gustaría verte porque estar contigo me hace igual de feliz que escuchar a Lana Del Rey. Tú y ella me alegran los días.",
+                "No sé por qué ni a qué hora se te ocurrió elegirme como mejor amiga pero gracias por hacerlo, en verdad mejoraste mi vida y créeme que todos los momentos que hemos vivido juntas han sido especiales; hasta puedo hacerte una lista con fechas y todo. Yo si me acuerdo pero ps es q no hago nada vdd, tú si.",
+                "Ya para terminar quiero decirte que si algún día nuestra amistad llega a terminar o el destino nos separa por cualquier motivo, tu sigas haciendo lo que te gusta, sé que obvio lo harás porque yo no repercuto en eso pero de verdad quiero que triunfes conmigo o sin mi, aunque te prometo que haré  todo lo posible para poder estar para ti siempre.",
+                "En fin, sé q hoy es lunes asqueroso, entraste a la escuela y seguramente después de esto vamos a dejar de hablar por un tiempo pq cuando salga yo de vacaciones voy a desaparecer pero no olvides que tqm si? Gracias por formar parte de mi vida y espero que te la pases decente y que esto te guste. Ojalá poder acompañarte en todos tus cumpleaños. Felicidades hdp ♥️",
+                "(Si le picas a las imágenes se ve un mensaje, ve una por una)"
+            ];
+
+            const messageElement = document.getElementById('message');
+            const titleElement = document.getElementById('title');
+            const photosElement = document.getElementById('photos');
+            const closingElement = document.getElementById('closing');
+            const signatureElement = document.getElementById('signature');
+            
+            let paragraphIndex = 0;
+            let charIndex = 0;
+
+            titleElement.classList.add('show');
+
+            titleElement.addEventListener('click', () => {
+                titleElement.classList.remove('show');
+                typeWriter();
+            });
+
+            function typeWriter() {
+                if (paragraphIndex < paragraphs.length) {
+                    if (charIndex < paragraphs[paragraphIndex].length) {
+                        messageElement.innerHTML += paragraphs[paragraphIndex].charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeWriter, 35); 
+                    } else {
+                        messageElement.innerHTML += "<br><br>";
+                        charIndex = 0;
+                        paragraphIndex++;
+                        setTimeout(typeWriter, 500); 
+                    }
+                } else {
+                    photosElement.style.display = 'flex';
+                    photosElement.classList.add('show');
+                    closingElement.style.display = 'block';
+                    closingElement.classList.add('show');
+                    signatureElement.style.display = 'block';
+                    signatureElement.classList.add('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
